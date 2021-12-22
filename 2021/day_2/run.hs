@@ -6,7 +6,7 @@ import Data.Maybe
 import Text.Read
 
 main = do
-  dt <- mapMaybe parseData <$> readInput -- :: IO [String]
+  dt <- mapMaybe parseData <$> readRawInput
 
   print $ star1 dt
   print $ star2 dt

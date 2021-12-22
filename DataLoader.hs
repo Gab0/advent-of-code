@@ -17,11 +17,11 @@ dataArray :: (Read a) => [String] -> [a]
 dataArray = map read
 
 
-readInput :: IO [String]
-readInput = head <$> getArgs >>= parseFile
+readRawInput :: IO [String]
+readRawInput = head <$> getArgs >>= parseFile
 
-loadData :: (Read a) => IO [a]
-loadData = dataArray <$> readInput
+readParsedInput :: (Read a) => IO [a]
+readParsedInput = dataArray <$> readRawInput
 
 
 sumVec2 (a1, a2) (b1, b2) = (a1 + b1, a2 + b2)

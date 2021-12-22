@@ -3,7 +3,7 @@
 import DataLoader
 
 main = do
-  v <- loadData :: IO [Int]
+  v <- readParsedInput :: IO [Int]
   print $ star1 v
   print $ star2 v
 

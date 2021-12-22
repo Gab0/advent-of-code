@@ -10,7 +10,7 @@ import Data.Maybe
 type Binary = [Int]
 
 main = do
-  dt <- map parseData <$> readInput
+  dt <- map parseData <$> readRawInput
   print $ star1 dt
   print $ star2 dt
 
