@@ -11,7 +11,6 @@ data Line = Line Point Point
 
 main = do
   dt <- map parseLine <$> (readRawInput :: IO [String])
-  print $ "This one takes a bit too long..."
   print $ star1 dt
   print $ star2 dt
 
@@ -22,25 +21,29 @@ star1 dt = countOverlaps
 star2 dt = countOverlaps
          $ concatMap getLinePoints dt
 
-countOverlaps points = length
-                     $ nub (points \\ nub points)
+countOverlaps :: [Point] -> Int
+countOverlaps  = length
+               . filter ((<) 1 . length)
+               . group
+               . sort
+               . map convert
+  where
+    convert :: Point -> Int
+    convert (x, y) = (x * 1000) + y
 
 parseLine :: String -> Line
 parseLine t = Line p1 p2
   where
     [p1, p2]    = map readPoint
-                $ take 2
                 $ splitOn " -> " t
     readPoint p = (x, y)
       where
         [x, y] = map (read :: String -> Int)
-               $ splitOn ","
-               $ T.unpack $ T.strip $ T.pack p
+               $ splitOn "," p
 
 isHV :: Line -> Bool
 isHV (Line (ax, ay) (bx, by)) = ax == bx
                              || ay == by
-
 
 getLinePoints :: Line -> [Point]
 getLinePoints (Line (x1, y1) (x2, y2))
