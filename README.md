@@ -1,6 +1,6 @@
 ### About
 
-Here are solutions to ![Advent of Code]( https://adventofcode.com/)
+Here are solutions to [Advent of Code]( https://adventofcode.com/)
 challenges using the `Haskell` programming language.
 
 The original intent behind this is to check 
