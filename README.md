@@ -13,3 +13,9 @@ much shorter "development time".
 
 The progress will be very slow I guess... in a few years
 the stars for all AoC editions may be here.
+
+### Run
+
+To run the first challenge of 2021: `bash run 202101`
+
+If `ghc` asks for missing modules, install them with `stack install <module>`.

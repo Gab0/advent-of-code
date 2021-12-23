@@ -3,6 +3,8 @@ module DataLoader where
 import System.IO
 import System.Environment
 
+import Data.List.Split
+
 import Control.Monad (join)
 import Control.Arrow ((***))
 
@@ -23,6 +25,9 @@ readRawInput = head <$> getArgs >>= parseFile
 readParsedInput :: (Read a) => IO [a]
 readParsedInput = dataArray <$> readRawInput
 
+-- | Read input when it is a single line of comma separate values.
+readCSVLine :: IO [Int]
+readCSVLine = dataArray . splitOn "," . head <$> readRawInput
 
 sumVec2 (a1, a2) (b1, b2) = (a1 + b1, a2 + b2)
 
