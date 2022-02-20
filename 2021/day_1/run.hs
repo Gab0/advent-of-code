@@ -1,6 +1,6 @@
 
 
-import DataLoader
+import Puzzle.Input
 
 main = do
   v <- readParsedInput :: IO [Int]

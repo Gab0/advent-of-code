@@ -1,4 +1,4 @@
-import DataLoader
+import Puzzle.Input
 
 import           Data.List.Split
 import qualified Data.Text as T

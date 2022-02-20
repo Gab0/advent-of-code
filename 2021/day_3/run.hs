@@ -1,5 +1,5 @@
 
-import DataLoader
+import Puzzle.Input
 
 import Data.Word
 import Text.Read

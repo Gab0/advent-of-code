@@ -1,6 +1,6 @@
 
 {-# LANGUAGE OverloadedStrings #-}
-import DataLoader
+import Puzzle.Input
 
 import qualified Data.Text as T
 import           Data.List

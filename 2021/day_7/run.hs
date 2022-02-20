@@ -1,5 +1,5 @@
 
-import DataLoader
+import Puzzle.Input
 
 main = do
   dt <- readCSVLine :: IO [Int]

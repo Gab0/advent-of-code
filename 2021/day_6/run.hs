@@ -1,5 +1,5 @@
 
-import DataLoader
+import Puzzle.Input
 import Data.List.Split
 
 type State = [Int]

@@ -1,5 +1,5 @@
  
-import DataLoader
+import Puzzle.Input
 
 import Data.List.Split
 import Data.Maybe
