@@ -1,0 +1,14 @@
+YEAR="${1:0:4}"
+DAY="${1:4:6}"
+
+echo $YEAR
+M="YEAR/DAY Selection error! Try something like 202101."
+if [ ${#YEAR} -ne 4 ]; then echo "${M}" ; exit
+fi
+if [ ${#DAY} -ne 2 ]; then echo "${M}" ; exit
+fi
+
+DAY=$(echo $DAY | sed 's/^0*//')
+echo $DAY
+echo "--------"
+stack runghc ../${YEAR}/day_${DAY}/run.hs ../${YEAR}/day_${DAY}/input

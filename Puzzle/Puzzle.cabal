@@ -1,0 +1,63 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fb96312102814a968fcd22d0a33f02cae0ef33040f6b51912d513fa08eb32b47
+
+name:           Puzzle
+version:        0.1.0.0
+synopsis:       Utilities for programming puzzles.
+description:    Written for Advent of Code, may help with other challenges.
+category:       Web
+homepage:       https://github.com/githubuser/aoc#readme
+author:         Gabriel Nogueira Araujo
+maintainer:     example@example.com
+copyright:      2022 Gabriel Nogueira Araujo
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      Puzzle.Input
+  other-modules:
+      Paths_Puzzle
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , random
+    , split
+  default-language: Haskell2010
+
+executable Puzzle
+  main-is: Main.hs
+  other-modules:
+      Paths_Puzzle
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Puzzle
+    , base
+  default-language: Haskell2010
+
+test-suite puzzle-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Data.String.StripSpec
+      Paths_Puzzle
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Puzzle
+    , QuickCheck
+    , base
+    , hspec
+  default-language: Haskell2010
