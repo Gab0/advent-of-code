@@ -16,6 +16,10 @@ the stars for all AoC editions may be here.
 
 ### Run
 
-To run the first challenge of 2021: `bash run 202101`
+To run the first challenge of 2021:
+ ```
+cd Puzzle
+bash run 202101
+```
 
 If `ghc` asks for missing modules, install them with `stack install <module>`.
